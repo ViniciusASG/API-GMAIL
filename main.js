@@ -23,7 +23,7 @@ const enviarEmail = async (dados) => {
   if (!mensagem || !email) {
     throw new Error('Email e mensagem são obrigatórios.');
   }
-
+  // Corpo do email
   const corpoEmail = `
     <html>
     <body style="font-family: Arial, sans-serif; line-height: 1.6;">
@@ -41,13 +41,13 @@ const enviarEmail = async (dados) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
+      user: 'Email aqui', // seu email
+      pass: 'Senha aqui', // sua senha no APP do google
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: 'Email aqui',
     to: email,
     subject: 'Obrigado por entrar em contato!',
     html: corpoEmail,
@@ -70,3 +70,6 @@ app.post('/enviar-email', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+// EMAIL_USER=seu_email@gmail.com
+//EMAIL_PASS=sua_senha
