@@ -73,3 +73,11 @@ app.listen(port, () => {
 
 // EMAIL_USER=seu_email@gmail.com
 //EMAIL_PASS=sua_senha
+
+
+// Codigo para o PostMan 
+//{
+//	"nome": "Vinicius",
+//	"email": "vynny2901@gmail.com",
+//	"mensagem": "Gostaria de mais informações sobre seu serviço."
+//}
